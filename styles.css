@@ -170,32 +170,10 @@ h1 {
     linear-gradient(180deg, rgba(255, 206, 154, 0.9) 0%, rgba(255, 248, 232, 0.5) 28%, rgba(135, 190, 183, 0.9) 72%, rgba(70, 132, 126, 1) 100%);
 }
 
-.sun {
-  position: absolute;
-  top: 64px;
-  right: 56px;
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  background: rgba(255, 245, 213, 0.95);
-  box-shadow: 0 0 90px rgba(255, 241, 196, 0.7);
-}
-
-.ocean {
-  position: absolute;
-  inset: auto -10% -8% -10%;
-  height: 44%;
-  border-top-left-radius: 60% 30%;
-  border-top-right-radius: 50% 26%;
+.hero-photo-image {
   background:
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.12) 0,
-      rgba(255, 255, 255, 0.12) 8px,
-      rgba(104, 170, 163, 0.05) 8px,
-      rgba(104, 170, 163, 0.05) 16px
-    ),
-    linear-gradient(180deg, rgba(161, 214, 206, 0.88), rgba(77, 141, 135, 0.98));
+    linear-gradient(180deg, rgba(24, 47, 90, 0.06), rgba(24, 47, 90, 0.18)),
+    url("assets/Change%20Cabana.jpg") center/cover no-repeat;
 }
 
 .card-note {
@@ -279,24 +257,8 @@ h1 {
 .product-image {
   height: 280px;
   border-radius: 18px;
-}
-
-.sand {
-  background:
-    linear-gradient(150deg, rgba(255, 244, 224, 0.6), transparent 48%),
-    linear-gradient(180deg, #d7b88e, #b89268);
-}
-
-.seafoam {
-  background:
-    linear-gradient(150deg, rgba(249, 255, 255, 0.58), transparent 50%),
-    linear-gradient(180deg, #8ab7b0, #5f8f88);
-}
-
-.coral {
-  background:
-    linear-gradient(150deg, rgba(255, 238, 230, 0.58), transparent 48%),
-    linear-gradient(180deg, #d8654a, #b9533d);
+  width: 100%;
+  object-fit: cover;
 }
 
 .shop-callout {
