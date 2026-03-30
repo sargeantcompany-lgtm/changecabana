@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Cabana</title>
+  <meta
+    name="description"
+    content="Change Cabana creates easy, elevated essentials for beach days, pool days, and life on the move."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home">Change Cabana</a>
+      <nav class="nav">
+        <a href="#story">Story</a>
+        <a href="#collection">Collection</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Pre-launch coastal essentials</p>
+          <h1>Change Cabana is coming soon.</h1>
+          <p class="lead">
+            A new coastal lifestyle brand for easy transitions from swim to street.
+            We are getting ready for launch with practical, elevated essentials made
+            for beach days, pool days, weekends away, and life on the move.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Join The Waitlist</a>
+            <a class="button button-secondary" href="#story">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-photo">
+            <div class="sun"></div>
+            <div class="ocean"></div>
+            <div class="card-note">
+              <span>Pre-launch now</span>
+              <strong>Website live, shop coming soon</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip" aria-label="Brand highlights">
+        <article>
+          <p class="feature-label">Join early</p>
+          <h2>Capture interest before launch day</h2>
+        </article>
+        <article>
+          <p class="feature-label">Brand-first</p>
+          <h2>Tell the story before the store opens</h2>
+        </article>
+        <article>
+          <p class="feature-label">Shopify-ready</p>
+          <h2>Turn on purchases when you are ready</h2>
+        </article>
+      </section>
+
+      <section class="story" id="story">
+        <div class="section-heading">
+          <p class="eyebrow">The brand</p>
+          <h2>Built around the in-between moments.</h2>
+        </div>
+        <div class="story-grid">
+          <p>
+            Change Cabana brings together practical function and a relaxed, elevated
+            coastal feel. The brand is ideal for products that support changing,
+            carrying, drying, layering, and heading out without missing a beat.
+          </p>
+          <p>
+            For pre-launch, this site gives you a polished place to send people from
+            Instagram, TikTok, word of mouth, or early campaigns while you build your
+            first collection and prepare the Shopify store.
+          </p>
+        </div>
+      </section>
+
+      <section class="collection" id="collection">
+        <div class="section-heading">
+          <p class="eyebrow">What is coming</p>
+          <h2>A first look at the kind of pieces Change Cabana is building toward.</h2>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image sand"></div>
+            <h3>The Cabana Wrap</h3>
+            <p>Soft coverage for beach changes, cool evenings, and grab-and-go comfort.</p>
+          </article>
+          <article class="product-card">
+            <div class="product-image seafoam"></div>
+            <h3>The Everyday Tote</h3>
+            <p>Roomy enough for towels, swimmers, sunscreen, and the extra things you always need.</p>
+          </article>
+          <article class="product-card">
+            <div class="product-image coral"></div>
+            <h3>The Quick Dry Set</h3>
+            <p>Lightweight essentials designed to move from water to whatever comes next.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="shop-callout" id="shop">
+        <div>
+          <p class="eyebrow">Store launch path</p>
+          <h2>The site is ready now, and Shopify can plug in when sales go live.</h2>
+        </div>
+        <div class="shop-panel">
+          <p>
+            When your store is ready, this section can link to Shopify, use a
+            `shop.changecabana.com` subdomain, or embed Shopify buy buttons without
+            rebuilding the site.
+          </p>
+          <a class="button button-primary" href="#" aria-disabled="true">Shop Opens Soon</a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Waitlist</p>
+          <h2>Collect early interest while the first release is in progress.</h2>
+        </div>
+        <form class="contact-card" id="waitlist-form" novalidate>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="hello@example.com" required>
+          </label>
+          <label>
+            What are you most excited for?
+            <textarea name="message" rows="5" placeholder="Beach wraps, bags, towels, accessories, or launch updates."></textarea>
+          </label>
+          <button class="button button-primary" type="submit">Join The Waitlist</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

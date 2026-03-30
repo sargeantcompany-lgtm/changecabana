@@ -1,0 +1,13 @@
+{
+  "name": "changecabana",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pre-launch landing page for Change Cabana",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
