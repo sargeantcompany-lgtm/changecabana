@@ -378,6 +378,56 @@ h1 {
   }
 }
 
+.full-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: 0 0 56px;
+}
+
+.full-specs-intro h2 {
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.full-specs-intro p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 12px;
+}
+
+.full-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+
+.full-specs-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.full-specs-list li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 920px) {
+  .full-specs {
+    grid-template-columns: 1fr;
+  }
+}
+
 .shop-details {
   list-style: none;
   padding: 0;
