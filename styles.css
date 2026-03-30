@@ -54,7 +54,7 @@ a {
 }
 
 .logo {
-  height: 80px;
+  height: 120px;
   width: auto;
   display: block;
 }
@@ -279,13 +279,29 @@ h1 {
   padding: 28px 0 56px;
 }
 
-.story-grid {
+.story {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
 }
 
-.story-grid p,
+.story-left h2 {
+  margin-top: 10px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.story-left p {
+  margin-top: 16px;
+}
+
+.story-right img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+}
+
 .shop-panel p,
 .product-card p {
   color: var(--muted);
@@ -375,7 +391,7 @@ textarea:focus {
 @media (max-width: 920px) {
   .hero,
   .feature-strip,
-  .story-grid,
+  .story,
   .product-grid,
   .shop-callout {
     grid-template-columns: 1fr;
