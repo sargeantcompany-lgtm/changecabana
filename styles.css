@@ -332,6 +332,29 @@ h1 {
   object-fit: cover;
 }
 
+.shop-details {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.shop-details li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.shop-details li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
 .shop-callout {
   display: grid;
   grid-template-columns: 1fr 1fr;
