@@ -205,6 +205,63 @@ h1 {
   padding: 22px;
 }
 
+.change-room-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 28px 0 64px;
+}
+
+.change-room-image img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+}
+
+.change-room-copy h2 {
+  margin-top: 10px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.change-room-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.feature-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 920px) {
+  .change-room-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-heading {
   margin-bottom: 24px;
 }
