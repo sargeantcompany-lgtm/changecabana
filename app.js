@@ -1,40 +1,41 @@
 const contactForm = document.querySelector("#contact-form");
-const contactStatus = document.querySelector("#contact-status");
 
-if (contactForm && contactStatus) {
+if (contactForm) {
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const contactStatus = document.querySelector("#contact-status");
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     const formData = new FormData(contactForm);
-    const payload = {
-      name: String(formData.get("name") || "").trim(),
-      email: String(formData.get("email") || "").trim(),
-      message: String(formData.get("message") || "").trim(),
-    };
-    if (!payload.name || !payload.email || !payload.message) {
-      contactStatus.textContent = "Please fill in all fields.";
-      contactStatus.dataset.state = "error";
-      return;
-    }
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
-    contactStatus.textContent = "Sending...";
-    contactStatus.dataset.state = "loading";
+    formData.append("access_key", "ea1dc0a7-6d8d-47b9-bbc9-123f70ed45e0");
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: formData,
       });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Something went wrong.");
-      contactForm.reset();
-      contactStatus.textContent = "Message sent. We'll be in touch soon.";
-      contactStatus.dataset.state = "success";
+
+      const data = await response.json();
+
+      if (response.ok) {
+        contactForm.reset();
+        contactStatus.textContent = "Message sent. We'll be in touch soon.";
+        contactStatus.dataset.state = "success";
+      } else {
+        contactStatus.textContent = data.message || "Something went wrong.";
+        contactStatus.dataset.state = "error";
+      }
     } catch (error) {
-      contactStatus.textContent = error.message || "Unable to send right now.";
+      contactStatus.textContent = "Something went wrong. Please try again.";
       contactStatus.dataset.state = "error";
     } finally {
-      if (submitBtn) submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
 }
