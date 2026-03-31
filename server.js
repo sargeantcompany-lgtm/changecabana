@@ -51,6 +51,35 @@ app.post("/api/waitlist", (req, res) => {
   return res.status(201).json({ ok: true });
 });
 
+app.post("/api/contact", (req, res) => {
+  const name = String(req.body?.name || "").trim();
+  const email = String(req.body?.email || "").trim().toLowerCase();
+  const message = String(req.body?.message || "").trim();
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    return res.status(400).json({ error: "Please enter a valid email address." });
+  }
+
+  const contactPath = path.join(dataDirectory, "contacts.json");
+  let contacts = [];
+  try {
+    const content = fs.readFileSync(contactPath, "utf8");
+    const parsed = JSON.parse(content);
+    if (Array.isArray(parsed)) contacts = parsed;
+  } catch (_) {}
+
+  contacts.push({ id: cryptoRandomId(), name, email, message, createdAt: new Date().toISOString() });
+  fs.mkdirSync(dataDirectory, { recursive: true });
+  fs.writeFileSync(contactPath, JSON.stringify(contacts, null, 2));
+
+  return res.status(201).json({ ok: true });
+});
+
 app.listen(port, () => {
   console.log(`Change Cabana server running on port ${port}`);
 });

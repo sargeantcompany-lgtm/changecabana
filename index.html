@@ -202,7 +202,7 @@
 
     </main>
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <p class="eyebrow">Get in Touch</p>
       <h2>Have a question? We'd love to hear from you.</h2>
       <div class="contact-details">
@@ -215,6 +215,24 @@
           <span class="contact-value">0407 739 919</span>
         </a>
       </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="contact-form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="hello@example.com" required>
+          </label>
+        </div>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Send Message</button>
+        <p class="form-status" id="contact-status" aria-live="polite"></p>
+      </form>
     </section>
 
   </div>
