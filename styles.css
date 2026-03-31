@@ -54,9 +54,11 @@ a {
 }
 
 .logo {
-  height: 160px;
+  height: 100px;
   width: auto;
   display: block;
+  border: none;
+  outline: none;
   border: 2px solid var(--line);
   border-radius: 16px;
   padding: 8px 16px;
@@ -153,7 +155,6 @@ h1 {
   background: rgba(255, 250, 242, 0.6);
 }
 
-.hero-card,
 .contact-card,
 .shop-panel,
 .product-card,
@@ -167,6 +168,10 @@ h1 {
 .hero-card {
   border-radius: 28px;
   padding: 18px;
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .hero-video {
