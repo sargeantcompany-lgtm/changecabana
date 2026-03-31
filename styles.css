@@ -54,15 +54,14 @@ a {
 }
 
 .logo {
-  height: 100px;
-  width: auto;
+  width: 340px;
+  height: auto;
   display: block;
   border: none;
   outline: none;
-  border: 2px solid var(--line);
-  border-radius: 16px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.6);
+  background: none;
+  padding: 0;
+  mix-blend-mode: multiply;
 }
 
 .nav {
