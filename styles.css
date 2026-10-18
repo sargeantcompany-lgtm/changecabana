@@ -359,7 +359,11 @@ h1 {
   max-width: 12ch;
 }
 
-/* The product heading fits on one line on desktop; it wraps on phones */
+/* The product heading is centred and fits on one line on desktop; it wraps on phones */
+.collection .section-heading {
+  text-align: center;
+}
+
 .collection .section-heading h2 {
   max-width: none;
   font-size: clamp(1.7rem, 3.2vw, 2.6rem);
