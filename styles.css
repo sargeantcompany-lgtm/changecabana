@@ -90,6 +90,9 @@ a {
   letter-spacing: -0.01em;
   color: var(--white);
   white-space: nowrap;
+  /* Thin white frame around the header logo */
+  border: 1.5px solid var(--white);
+  padding: 0.28em 0.5em 0.32em;
 }
 
 .wordmark-tri {
