@@ -9,6 +9,7 @@
   --muted: rgba(255, 255, 255, 0.78);
   --line: rgba(255, 255, 255, 0.18);
   --accent: var(--white);
+  --field-bg: rgba(255, 255, 255, 0.08);
   --shadow: none;
 }
 
@@ -20,6 +21,7 @@
   --muted: rgba(11, 31, 58, 0.74);
   --line: rgba(11, 31, 58, 0.16);
   --accent: var(--navy);
+  --field-bg: #f3f5f8;
   color: var(--ink);
   background: var(--white);
   box-shadow: 0 0 0 100vmax var(--white);
@@ -49,7 +51,6 @@ a {
 .site-shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding-bottom: 56px;
 }
 
 .topbar {
@@ -74,6 +75,33 @@ a {
   outline: none;
   background: none;
   padding: 0;
+}
+
+/* One-line white wordmark: "ch" + outline triangle + "nge cabana" */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: "Outfit", "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.wordmark-tri {
+  height: 0.74em;
+  width: auto;
+  margin: 0 0.03em;
+  overflow: visible;
+}
+
+.wordmark-tri path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 9;
+  stroke-linejoin: miter;
 }
 
 .nav {
@@ -241,9 +269,18 @@ h1 {
   margin-bottom: 56px;
 }
 
-.collection.band-light,
 .full-specs.band-light {
+  padding: 28px 0 56px;
+  margin-bottom: 0;
+}
+
+.change-room-feature.band-light {
   padding: 56px 0;
+  margin-bottom: 56px;
+}
+
+.collection {
+  padding-bottom: 56px;
 }
 
 .feature-strip article {
@@ -408,8 +445,8 @@ h1 {
 }
 
 .specs-tags li {
-  background: var(--white);
-  color: var(--navy);
+  background: var(--accent);
+  color: var(--bg);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -422,6 +459,13 @@ h1 {
   .specs-bar {
     grid-template-columns: 1fr;
   }
+}
+
+.specs-bar.band-light {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 56px 0 28px;
 }
 
 .full-specs {
@@ -621,18 +665,27 @@ textarea {
   padding: 14px 16px;
   font: inherit;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--field-bg);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
+  opacity: 0.7;
 }
 
 input:focus,
 textarea:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.35);
-  border-color: var(--white);
+  outline: 2px solid var(--line);
+  border-color: var(--ink);
+}
+
+.band-light .form-status[data-state="success"] {
+  color: #1f7a4d;
+}
+
+.band-light .form-status[data-state="error"] {
+  color: #b3261e;
 }
 
 @media (max-width: 920px) {
@@ -649,8 +702,8 @@ textarea:focus {
     font-size: 0.95rem;
   }
 
-  .logo {
-    height: 60px;
+  .wordmark {
+    font-size: 1.8rem;
   }
 
   .hero-photo {
@@ -664,22 +717,31 @@ textarea:focus {
   }
 
   .topbar {
-    padding: 14px 0;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 0 14px;
   }
 
-  .logo {
-    height: 48px;
+  .wordmark {
+    font-size: 1.7rem;
   }
 
   .nav {
-    gap: 14px;
-    font-size: 0.88rem;
+    gap: 22px;
+    font-size: 0.92rem;
   }
 
   .feature-strip,
-  .collection.band-light,
-  .full-specs.band-light {
+  .change-room-feature.band-light {
     padding: 36px 0;
+  }
+
+  .specs-bar.band-light {
+    padding: 36px 0 20px;
+  }
+
+  .full-specs.band-light {
+    padding: 20px 0 36px;
   }
 
   h1 {
