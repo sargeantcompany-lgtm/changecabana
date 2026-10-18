@@ -356,16 +356,31 @@ h1 {
 .section-heading h2 {
   margin-top: 10px;
   font-size: clamp(1.9rem, 4vw, 3.2rem);
-  max-width: 22ch;
+  max-width: 12ch;
 }
 
-/* "Change Cabana" in the logo font, on its own line, spaced out a little */
+/* The product heading fits on one line on desktop; it wraps on phones */
+.collection .section-heading h2 {
+  max-width: none;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+}
+
+/* "ch△nge cabana" in the logo font, like the header wordmark */
 .brand-name {
-  display: block;
-  margin: 0.12em 0 0.06em;
   font-family: "Outfit", "DM Sans", sans-serif;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  margin: 0 0.08em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .story,
