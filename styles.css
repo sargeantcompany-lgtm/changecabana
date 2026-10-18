@@ -356,7 +356,16 @@ h1 {
 .section-heading h2 {
   margin-top: 10px;
   font-size: clamp(1.9rem, 4vw, 3.2rem);
-  max-width: 12ch;
+  max-width: 22ch;
+}
+
+/* "Change Cabana" in the logo font, on its own line, spaced out a little */
+.brand-name {
+  display: block;
+  margin: 0.12em 0 0.06em;
+  font-family: "Outfit", "DM Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .story,
